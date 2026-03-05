@@ -8,26 +8,38 @@ import java.util.*;
 
 public class EvenOddAndSum {
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the value of positive number n: ");
-        int n = sc.nextInt();
-        // check n is even or odd
+    public static void checkEvenOdd(int n) {
         if (n % 2 == 0) {
             System.out.println("It is even.");
         } else {
             System.out.println("It is an odd number.");
         }
-        // sum of first n numbers
-        int sum = n * (n + 1) / 2;
-        System.out.println("Sum of first n numbers: " + sum);
+    }
 
-        // first n numbers printout
-        System.out.println("The first n numbers are: ");
+    public static int calculateSum(int n) {
+        return n * (n + 1) / 2;
+    }
+
+    public static void printNumbers(int n) {
         for (int i = 1; i <= n; i++) {
-
             System.out.print(i + " ");
         }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the value of n:");
+        int n = sc.nextInt();
+
+        checkEvenOdd(n);
+
+        int sum = calculateSum(n);
+        System.out.println("Sum of first n numbers: " + sum);
+
+        printNumbers(n);
+
         sc.close();
     }
 }
